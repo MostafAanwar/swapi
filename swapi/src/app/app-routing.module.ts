@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { PersonsComponent } from './persons/persons.component';
-import { PersonInputComponent } from './persons/person-input.component';
+import { PersonsComponent } from './components/persons/persons.component';
+import { PersonInputComponent } from './components/persons/person-input.component';
 
 const routes: Routes = [
   { path: '', component: PersonsComponent },
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

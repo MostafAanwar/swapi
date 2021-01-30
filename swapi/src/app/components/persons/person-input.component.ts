@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { PersonsService } from './persons.service';
+import { PersonsService } from '../../services/persons.service';
 
 @Component({
   selector: 'app-person-input',
@@ -11,8 +11,5 @@ export class PersonInputComponent {
   enteredPersonName = '';
 
   constructor(private personsService: PersonsService) { }
-  //constructor(private URL: UrlService){}
-  //constructor(private height: HeightService){}
-  //constructor(private homeworld: HomeWorldService){}
 
 }

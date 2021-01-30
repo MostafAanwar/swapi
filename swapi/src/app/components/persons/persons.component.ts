@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { PersonsService } from './persons.service';
+import { PersonsService } from '../../services/persons.service';
 
 @Component({
   selector: 'app-persons',
@@ -24,7 +24,8 @@ export class PersonsComponent implements OnInit, OnDestroy {
       this.isFetching = false;
     });
     this.isFetching = true;
-    this.prsService.fetchPersons();
+    this.prsService.fetchPersonsName();
+    this.prsService.fetchPersonsHeight();
   }
   ngOnDestroy() {
     this.personListSubs.unsubscribe();
