@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-
+import { HttpClient } from '@angular/common/http';
 import { SearchService } from '../../services/search.service';
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-search',
@@ -11,7 +14,10 @@ import { SearchService } from '../../services/search.service';
 
 export class SearchComponent implements OnInit {
   personList: string[];
+  personsChanged = new Subject<string[]>();
   isFetching = false;
+  chrctrName = "";
+
   private serviceListSubs: Subscription;
   // private personService: searchService;
 
@@ -19,6 +25,7 @@ export class SearchComponent implements OnInit {
     // this.personList = srchService.persons;
     // this.personService = srchService;
   }
+
 
   ngOnInit() {
     this.serviceListSubs = this.srchService.personsChanged.subscribe(persons => {
@@ -32,7 +39,9 @@ export class SearchComponent implements OnInit {
     this.serviceListSubs.unsubscribe();
   }
 
-  callTest(){
-   this.srchService.fetchPersons();
-}
+
+  callTest() {
+
+  }
+
 }
